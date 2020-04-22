@@ -20,7 +20,7 @@ class Company(models.Model):
 class Vacancy(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField()
-    salary = models.FloatField()
+    salary = models.FloatField(null=True, blank=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, blank=True, null=True)
 
     def to_json(self):

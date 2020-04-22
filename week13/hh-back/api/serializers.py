@@ -17,3 +17,6 @@ class VacancySerializer(serializers.Serializer):
     def create(self, validated_data):
         vacancy = Vacancy.objects.create(name=validated_data.get('name'))
         return vacancy
+
+    def update(self, validated_data):
+        vacancy = Vacancy.objects.get()
